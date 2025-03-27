@@ -4,15 +4,139 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu Portfólio</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilos Internos CSS */
+
+    /* Resetando estilos padrões */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Estilo do Cabeçalho */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 50px 0;
+    }
+
+    header h1 {
+      font-size: 3em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    /* Estilo dos Projetos */
+    #projects {
+      padding: 50px 0;
+      background-color: #fff;
+    }
+
+    #projects h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .project-container {
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .project {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 30%;
+    }
+
+    .project img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .project h3 {
+      margin-top: 10px;
+      font-size: 1.5em;
+    }
+
+    .project p {
+      margin-top: 10px;
+      font-size: 1em;
+      color: #555;
+    }
+
+    /* Estilo de Contato */
+    #contact {
+      background-color: #333;
+      color: #fff;
+      padding: 50px 0;
+    }
+
+    #contact h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    form textarea {
+      height: 150px;
+    }
+
+    form button {
+      padding: 10px;
+      background-color: #f39c12;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #e67e22;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Seção de Introdução -->
   <header>
     <div class="container">
-      <h1>Olá, eu sou João Paulo Medeiros Vieira</h1>
-      <p>Desenvolvedor Web |Criativo</p>
+      <h1>Olá, eu sou [Seu Nome]</h1>
+      <p>Desenvolvedor Web | Designer | Criativo</p>
     </div>
   </header>
 
@@ -21,19 +145,19 @@
     <h2>Meus Projetos</h2>
     <div class="project-container">
       <div class="project">
-        <img src="img1.avif" alt="Projeto 1">
+        <img src="https://via.placeholder.com/200" alt="Projeto 1">
         <h3>Projeto 1</h3>
-        <p>Projeto feito em conjunto sobre um jornal da Proz.</p>
+        <p>Descrição do projeto 1.</p>
       </div>
       <div class="project">
-        <img src="img1.avif" alt="Projeto 2">
+        <img src="https://via.placeholder.com/200" alt="Projeto 2">
         <h3>Projeto 2</h3>
-        <p>Projeto de um banco de dados feito sozinho como aprendizado.</p>
+        <p>Descrição do projeto 2.</p>
       </div>
       <div class="project">
-        <img src="img1.avif" alt="Projeto 3">
+        <img src="https://via.placeholder.com/200" alt="Projeto 3">
         <h3>Projeto 3</h3>
-        <p>trabalho administrado por mim para instituição privada     .</p>
+        <p>Descrição do projeto 3.</p>
       </div>
     </div>
   </section>
@@ -52,6 +176,23 @@
     </form>
   </section>
 
-  <script src="script.js"></script>
+  <script>
+    // Lidar com o envio do formulário de contato
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Impede o envio do formulário para simular a interação
+
+      // Coleta os dados do formulário
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      // Exibe uma mensagem de sucesso (pode ser substituída por uma lógica de envio real)
+      alert(`Obrigado, ${name}! Sua mensagem foi enviada com sucesso.\nEmail: ${email}\nMensagem: ${message}`);
+
+      // Limpa os campos do formulário após o envio
+      document.getElementById("contact-form").reset();
+    });
+  </script>
+
 </body>
 </html>
